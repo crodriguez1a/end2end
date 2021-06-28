@@ -8,7 +8,7 @@ def make_frames(filename,folder,frame_length,overlapping_fraction):
 
     print('processing file' + filename)
     class_id = filename.split('-')[1]
-    filename = './UrbanSound8K/audio'+'/'+folder + '/'+filename
+    filename = '../UrbanSound8K/audio'+'/'+folder + '/'+filename
     data,sample_rate = librosa.load(filename,sr=16000)
     stride = int((1-overlapping_fraction)*frame_length)
     num_frames = int((len(data)-frame_length)/stride)+1
@@ -30,7 +30,7 @@ def make_frames_folder(folders,frame_length,overlapping_fraction):
     for folder in folders:
         data = []
         print('processing folder {}'.format(folder))
-        files = os.listdir('./UrbanSound8K/audio'+'/'+folder)
+        files = os.listdir('../UrbanSound8K/audio'+'/'+folder)
         for file in files:
             res = make_frames(file,folder,frame_length,overlapping_fraction)
             if res is not None:
@@ -49,5 +49,6 @@ def make_frames_folder(folders,frame_length,overlapping_fraction):
 models = {}
 frame_length = 16000 
 overlapping_fraction = 0.5
-folders = os.listdir('./UrbanSound8K/audio')
+folders = os.listdir('../UrbanSound8K/audio')
 wrote_to_file = make_frames_folder(folders,frame_length,overlapping_fraction)
+
