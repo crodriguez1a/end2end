@@ -42,13 +42,13 @@ def make_frames_folder(folders,frame_length,overlapping_fraction):
             #import pdb;pdb.set_trace()
             local_dataset = torch.vstack((local_dataset,data[i]))
         dataset = torch.cat((dataset,local_dataset))
-    torch.save(dataset,'./torch_dataset_16khz/all_audio_data.pt')
+    torch.save(dataset,'./torch_dataset_1sec/all_audio_data.pt')
     return True
     
 
 models = {}
-frame_length = 16000 
-overlapping_fraction = 0.5
+frame_length = 1000 
+overlapping_fraction = 0.1
 folders = os.listdir('../UrbanSound8K/audio')
 wrote_to_file = make_frames_folder(folders,frame_length,overlapping_fraction)
 

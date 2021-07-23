@@ -1,0 +1,24 @@
+{
+    "os": "Linux-5.11.0-7620-generic-x86_64-with-glibc2.29",
+    "python": "3.8.10",
+    "heartbeatAt": "2021-07-21T14:23:15.518541",
+    "startedAt": "2021-07-21T14:23:13.007325",
+    "docker": null,
+    "gpu": "NVIDIA TITAN Xp",
+    "gpu_count": 3,
+    "cpu_count": 24,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "train_torch.py",
+    "codePath": "end2end/train_torch.py",
+    "git": {
+        "remote": "https://github.com/nazmosh/end2end.git",
+        "commit": "48d419f8f4c99c62d88cb428a095360c2aad931a"
+    },
+    "email": null,
+    "root": "/home/nazzy/Development/end2end",
+    "host": "swordfish",
+    "username": "nazzy",
+    "executable": "/usr/bin/python3"
+}
