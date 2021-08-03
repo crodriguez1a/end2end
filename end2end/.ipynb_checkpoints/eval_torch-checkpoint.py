@@ -43,6 +43,8 @@ audio_testloader = DataLoader (audio_testset, batch_size = 50, shuffle= True)
 # The trinity of models
 model = FeatureBlock3().cuda()
 loss_function = torch.nn.CrossEntropyLoss()
+# This is what controls the gradient descent
+optimizer = torch.optim.Adam(model.parameters(),lr=0.001,weight_decay=0.00001)
 T_max = 500
 scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, T_max)
 iteration = 0
@@ -91,6 +93,7 @@ with torch.no_grad():
         #print("y size:{} outputs size:{}".format(y_hat.size(),outputs.size()))
         loss = loss_function(outputs, y_hat)
 
+        optimizer.step()
 
         running_loss += loss.item()
         _, predicted = outputs.max(1)
