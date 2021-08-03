@@ -39,5 +39,10 @@ ehthumbs.db
 
 Thumbs.db
 
+end2end/wandb/*
+
+
+
+
 
 *.wav
